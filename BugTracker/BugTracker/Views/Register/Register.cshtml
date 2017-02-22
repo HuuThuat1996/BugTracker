@@ -1,0 +1,70 @@
+﻿@model BugTracker.Models.Infomation
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register to the party</h2>
+<div class="container body-content">
+
+
+    <form action="/Register/Register" method="post" novalidate="novalidate">
+        <input name="__RequestVerificationToken" type="hidden" value="aIaobrK15I2edYepxNulGD7YaBQ3I7KNrv8AzcuolpNIvcULVRWlzZbN99cyleiBgQyNXshxZu-14PMTOd9bua-GxzxaldHcg2g8VvK28oo1">    <div class="form-horizontal">
+            <h4>Infomation</h4>
+            <hr>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="FullName">FullName</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line input-validation-error" data-val="true" data-val-regex="Letters only" data-val-regex-pattern="([a-zA-Z])*" data-val-required="The FullName field is required." id="FullName" name="FullName" type="text" value="">
+                    <span class="text-danger field-validation-error" data-valmsg-for="FullName" data-valmsg-replace="true"><span for="FullName" class="">The FullName field is required.</span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Email">Email</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line input-validation-error" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" type="email" value="">
+                    <span class="text-danger field-validation-error" data-valmsg-for="Email" data-valmsg-replace="true"><span for="Email" class="">The Email field is required.</span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Phone">Phone</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line input-validation-error" data-val="true" data-val-regex="Number only" data-val-regex-pattern="[0-9]*" data-val-required="The Phone field is required." id="Phone" name="Phone" type="text" value="">
+                    <span class="text-danger field-validation-error" data-valmsg-for="Phone" data-valmsg-replace="true"><span for="Phone" class="">The Phone field is required.</span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Attend">Attend</label>
+                <div class="col-md-10">
+                    <select class="form-control list-box tri-state valid" data-val="true" data-val-required="The Attend field is required." id="Attend" name="Attend">
+                        <option selected="selected" value="">--</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Attend" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Reply" class="btn btn-default">
+                    <div>@ViewBag.messages</div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <hr>
+    <footer>
+        <p>@DateTime.Now</p>
+    </footer>
+</div>
